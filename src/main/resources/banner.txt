@@ -1,0 +1,16 @@
+${AnsiColor.BLUE}           　┏┓　　　┏┓
+            ┏┛┻━━━┛┻┓
+            ┃　　　　　　　┃ 　
+            ┃　　　━　　　┃
+            ┃　┳┛　┗┳　┃
+            ┃　　　　　　　┃
+            ┃　　　┻　　　┃
+            ┃　　　　　　　┃
+            ┗━┓　　　┏━┛
+            　　┃　　　┃　　　　　　　　　
+            　　┃　　　┃ Town building god beast
+            　　┃　　　┗━━━┓
+            　　┃　　　　　　　┣┓
+            　　┃　　　　　　　┏┛
+            　　┗┓┓┏━┳┓┏┛
+${AnsiColor.GREEN}>>>>>>>>>>>>Logo bless, bug free forever<<<<<<<<<<<<
