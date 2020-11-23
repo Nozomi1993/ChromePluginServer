@@ -1,0 +1,31 @@
+spring:
+  #这个是数据库 把ip改成自己的
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&&serverTimezone=Asia/Shanghai&&autoReconnect=true
+    #用户名 密码改成自己的
+    username: root
+    password: Gyt940205!
+    druid:
+      validationQuery: SELECT 1
+      initialSize: 10
+      minIdle: 10
+      maxActive: 200
+      minEvictableIdleTimeMillis: 180000
+      testOnBorrow: false
+      testWhileIdle: true
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      logAbandoned: true
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 100
+server:
+  #这个是web项目后台端口
+  port: 8080
+  tomcat:
+    accept-count: 30000
+    max-connections: 30000
+  #这个是项目路径 可以是空的
+  servlet:
+    context-path: /
+

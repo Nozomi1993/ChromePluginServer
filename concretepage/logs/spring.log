@@ -1,0 +1,12 @@
+2020-Nov-22 20:23:31.360 INFO  [main] c.e.d.ServerApplication - Starting ServerApplication using Java 1.8.0_275 on duy-virtual-machine with PID 20104 (/home/duy/IdeaProjects/Server/target/classes started by duy in /home/duy/IdeaProjects/Server)
+2020-Nov-22 20:23:31.369 INFO  [main] c.e.d.ServerApplication - No active profile set, falling back to default profiles: default
+2020-Nov-22 20:23:32.733 INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-Nov-22 20:23:32.748 INFO  [main] o.a.c.c.StandardService - Starting service [Tomcat]
+2020-Nov-22 20:23:32.748 INFO  [main] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-Nov-22 20:23:32.890 INFO  [main] o.a.c.c.C.[.[.[/aliyun] - Initializing Spring embedded WebApplicationContext
+2020-Nov-22 20:23:32.891 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1395 ms
+2020-Nov-22 20:23:33.161 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-Nov-22 20:23:33.269 INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2020-Nov-22 20:23:33.422 INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/aliyun'
+2020-Nov-22 20:23:33.438 INFO  [main] c.e.d.ServerApplication - Started ServerApplication in 3.012 seconds (JVM running for 3.862)
+2020-Nov-22 21:00:00.659 INFO  [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
