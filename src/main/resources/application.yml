@@ -21,7 +21,7 @@ spring:
       maxOpenPreparedStatements: 100
 mybatis-plus:
   mapper-locations: classpath*:mapper/*.xml
-  typeAliasesPackage: aliyun.aliyunserver.demo.entity
+  typeAliasesPackage: com.example.demo.entity
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
