@@ -53,7 +53,7 @@ public class CodeGenerator {
         mpg.setGlobalConfig(gc);
         //数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://120.25.27.23:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false");
+        dsc.setUrl("jdbc:mysql://120.25.27.23:3306/ChromePluginServer?useUnicode=true&characterEncoding=utf8&useSSL=false");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("Anye1990@");
@@ -61,7 +61,7 @@ public class CodeGenerator {
         //包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
-        pc.setParent("aliyun.aliyunserver.demo");
+        pc.setParent("com.example.demo");
         mpg.setPackageInfo(pc);
         //自定义配置
         InjectionConfig cfg = new InjectionConfig() {
