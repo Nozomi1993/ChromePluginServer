@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+</head>
+<script>
+    function windowHeight() {
+        var de = document.documentElement;
+        return self.innerHeight || (de && de.clientHeight) || document.body.clientHeight;
+    }
+
+    window.onload = window.onresize = function () {
+        var wh = windowHeight();
+        document.getElementById("xt-left").style.height = document.getElementById("xt-right").style.height = (wh - document.getElementById("xt-top").offsetHeight) + "px";
+    }
+
+    function getData(page, size) {
+        $.get("http://localhost:8080/populationStatisticsDetail/getPage?page=" + page + "&limit=" + size + "&date=" + date, function (msg) {
+            var html = '';
+            var datas = msg.data;
+            for (var i = 0; i < datas.length; i++) {
+                html += "<tr><td>" + datas[i].date + "</td><td>" + datas[i].ip + "</td><td>" + datas[i].country + "</td><td>" + datas[i].type + "</td></tr>"
+            }
+            document.getElementById('rowValue').innerHTML = html;
+        });
+    }
+</script>
+
+<script>
+    var date = window.location.href.split("?")[1].split("=")[1];
+    window.onload = function getData() {
+        $.get("http://localhost:8080/populationStatisticsDetail/getPage?page=1&limit=20&date=" + date, function (msg) {
+            var html = '';
+            var datas = msg.data;
+            for (var i = 0; i < datas.length; i++) {
+                html += "<tr><td>" + datas[i].date + "</td><td>" + datas[i].ip + "</td><td>" + datas[i].country + "</td><td>" + datas[i].type + "</td></tr>"
+            }
+            document.getElementById('rowValue').innerHTML = html;
+        });
+    }
+</script>
+
+<body>
+<!-- top -->
+<div id="xt-top">
+    <div class="xt-logo"><img src="images/logo.png"/></div>
+</div>
+<!-- left -->
+<div class="xt-center">
+    <div id="xt-left">
+        <div class="xt-logo"></div>
+        <div class="xt-menu">
+            <ul>
+                <li><a href="#" class="hover"><em class="one"></em>数据统计</a></li>
+            </ul>
+            <div class="xt-menu-list"></div>
+        </div>
+    </div>
+    <!-- right -->
+    <div id="xt-right">
+        <div class="xt-table">
+            <table cellpadding="0" cellspacing="0" border="0" bgcolor="#dcdcdc" width="100%">
+                <tr>
+                    <th>date</th>
+                    <th>ip</th>
+                    <th>country</th>
+                    <th>operation</th>
+                </tr>
+                <tbody id="rowValue">
+                </tbody>
+            </table>
+        </div>
+        <div class="xt-fenye">
+            <div class="xt-fenye-left">当前第 1 / 270 页,每页20条，共 2696条记录</div>
+            <div class="xt-fenye-right">
+                <a href="#" onclick="getData(1,20)">首页</a>
+                <a href="#">上一页</a>
+                <a href="#">下一页</a>
+                <a href="#">尾页</a>
+                <input type="text" name="text"/>
+                <a href="#" class="xt-link">跳转</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src='js/jquery-3.5.1.js'></script>
+<script src="js/index.js"></script>
+<script src="js/jquery-3.5.1.min.js"></script>
+
+</body>
+</html>

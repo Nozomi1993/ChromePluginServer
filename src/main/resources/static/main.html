@@ -22,7 +22,7 @@
             var html = '';
             var datas = msg.data;
             for (var i = 0; i < datas.length; i++) {
-                html += "<tr><td>" + datas[i].date + "</td><td>" + datas[i].peopleOfIncrease + "</td><td>" + datas[i].peopleOfUninstall + "</td><td>" + datas[i].totalRemaining + "</td></tr>"
+                html += "<tr><td>" + datas[i].date + "</td><td>" + datas[i].peopleOfIncrease + "</td><td>" + datas[i].peopleOfUninstall + "</td><td>" + datas[i].totalRemaining + "</td><td><a href='detail.html?date=" + datas[i].date + "'>详情</a></td></tr>"
             }
             document.getElementById('rowValue').innerHTML = html;
         });

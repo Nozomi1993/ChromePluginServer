@@ -3,7 +3,10 @@ package com.example.demo.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.demo.base.BaseAdminController;
 import com.example.demo.entity.PopulationStatistics;
+import com.example.demo.entity.PopulationStatisticsDetail;
+import com.example.demo.service.IPopulationStatisticsDetailService;
 import com.example.demo.service.IPopulationStatisticsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,13 +31,22 @@ import java.util.Objects;
 @ResponseBody
 public class PopulationStatisticsController extends BaseAdminController<PopulationStatistics, IPopulationStatisticsService> {
 
+    @Autowired
+    private IPopulationStatisticsDetailService populationStatisticsDetailService;
+
     @GetMapping("/work")
-    public void work(Integer type) {
+    public void work(Integer type, String ip, String country) {
         SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
         String today = s.format(new Date());
         QueryWrapper<PopulationStatistics> wrapper = new QueryWrapper<>();
         wrapper.eq("date", today);
         PopulationStatistics statistics = this.serviceImpl.getOne(wrapper);
+        PopulationStatisticsDetail detail = new PopulationStatisticsDetail();
+        detail.setDate(today);
+        detail.setIp(ip);
+        detail.setCountry(country);
+        detail.setType(type == 1? "install" : "uninstall");
+        populationStatisticsDetailService.save(detail);
         switch (type) {
             //卸载+1
             case 0:
