@@ -3,11 +3,11 @@ function checkUser() {
     var username = a.value;
     var b = document.getElementById("p");
     var passwd = b.value;
-    if (username != "" && passwd != "") {
-        window.location.href = 'main.html';
+    if (username != "admin" && passwd != "admin") {
+        alert("Please input right username and passwd!");
     }
     else{
-        alert("Please input username and passwd!");
+        window.location.href = 'main.html';
     }
 }
 

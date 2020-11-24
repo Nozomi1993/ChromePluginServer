@@ -1,11 +1,9 @@
 package com.example.demo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -26,8 +24,8 @@ import lombok.experimental.Accessors;
 public class PopulationStatistics implements Serializable {
 
     @ApiModelProperty(value = "日期")
-    @TableId("data")
-    private LocalDateTime data;
+    @TableId("date")
+    private String date;
 
     @ApiModelProperty(value = "新增人数")
     @TableField("people_of_increase")
